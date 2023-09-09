@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+        #slackUserName {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+        }
+        #slackDisplayImage {
+            max-width: 200px;
+            border-radius: 50%;
+            margin: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1 data-testid="slackUserName">spaceCadet</h1>
+    <img src="./assets/myphoto.jpeg" alt="spaceCadet" id="slackDisplayImage" data-testid="slackDisplayImage">
+    <p data-testid="currentDayOfTheWeek"><span id="dayOfTheWeek"></span></p>
+    <p data-testid="currentUTCTime"><span id="utcTime"></span></p>
+    <p data-testid="myTrack">Front-end Track</p>
+    <a href="https://github.com/your-username/your-repo" data-testid="githubURL">GitHub Repository</a>
+
+    <script>
+        const dayOfTheWeekElement = document.getElementById('dayOfTheWeek');
+        const utcTimeElement = document.getElementById('utcTime');
+
+        
+        const currentDate = new Date();
+        const dayOfTheWeek = currentDate.toLocaleString('en-US', { weekday: 'long' });
+        const utcTime = currentDate.getTime();
+
+        
+        dayOfTheWeekElement.textContent = dayOfTheWeek;
+        utcTimeElement.textContent = utcTime;
+    </script>
+</body>
+</html>
